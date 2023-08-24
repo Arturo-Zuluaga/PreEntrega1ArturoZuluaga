@@ -1,11 +1,12 @@
-import {Flex, Box } from '@chakra-ui/react'
+import {Flex, Box, background } from '@chakra-ui/react'
 import React from 'react'
+import "../main.css";
 
 const ItemListContainer = ({greeting}) => {
   return (
 
-    <Flex>
-        <Box m="4">
+    <Flex className='container'>
+        <Box className='contenedor' >
             <h1>{greeting}</h1>
    
         </Box>
