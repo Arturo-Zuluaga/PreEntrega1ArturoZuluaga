@@ -1,11 +1,13 @@
 import React from 'react'
 import ItemDetail from "./ItemDetail"
+import { useParams } from 'react-router-dom'
+
 
 
 const ItemDetailContainer = () => {
 
   
-    // const {category} =useParams()
+    const {categoria} =useParams()
 
     const productos = [
       {id:1, nombre:"Anillo de perla", descripcion: "Anillo de perla trabjado con tecnica de alambrismo fino", stock: 5, categoria:"Anillos" ,imageUrl:"https://admin.centecpro.com/SVsitefiles/centeclima/contenido/med/e6cb2b_alambre%2011.jpg"},
@@ -23,12 +25,12 @@ const ItemDetailContainer = () => {
       reject(new Error ("no hay datos"))
     }
   })
-     getProductos.them((res)=>{
+     getProductos.then((resolve)=>{
    })
    .catch((error) =>{console.log(error)
   })
 
-const filteredProducts= productos.filter((producto) => producto.category === category)
+const filteredProductos= productos.filter((producto) => producto.categoria === categoria)
     
   return(
     <>

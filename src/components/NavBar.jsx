@@ -12,7 +12,7 @@ const Navbar = () => {
             <Box p='4' backgroundColor='rgba(219, 252, 253, 0.946)'borderRadius="10px" >
             <Link to={"/"}>
                 
-             <h3> joyeria La realeza</h3>
+             <h3> joyeria La perla del caribe</h3>
             </Link>
 
             </Box>
@@ -23,15 +23,15 @@ const Navbar = () => {
                      Categories
                     </MenuButton>
                     <MenuList>
-                        <Link to={"/category/Anillos"}>
+                        <Link to={"/categoria/Anillos"}>
                         <MenuItem>Anillos</MenuItem>
 
                         </Link>
-                        <Link to={"/category/Pulseras"}>
+                        <Link to={"/categoria/Pulseras"}>
                         <MenuItem>Pulseras</MenuItem>
 
                         </Link>
-                        <Link to={"/category/Zarcillos"}>
+                        <Link to={"/categoria/Zarcillos"}>
                         <MenuItem>Zarcillos</MenuItem>
 
 

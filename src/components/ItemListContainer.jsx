@@ -27,7 +27,7 @@ const ItemListContainer = () => {
    .catch((error) =>{console.log(error)
   })
 
-    const filteredProducts= productos.filter((Products) => productos.categoria === category)
+    const filteredProductos= productos.filter((Products) => productos.categoria === category)
     
   return(
     <>

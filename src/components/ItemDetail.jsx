@@ -4,26 +4,26 @@ import ItemCount from './ItemCount'
 import { useParams } from 'react-router-dom'
 
 
-const ItemDetail = ({ producto }) => {
-  console.log(producto)
-  const { id } = useParams()
-
-  const filteredProducts = producto.filter((producto) => producto.id == id);
-
-
+const ItemDetail =(productos) => {
+    const { id } = useParams()
+    
+    const filteredProducts = productos.filter((producto) => producto.id == id);
+    
+    console.log(productos)
+    
 
   return (
 
       <div>
 
-          {filteredProducto.map((p) => {
+          {filteredProducts.map((producto) => {
 
 
 
 
 return (
 
-  <div key={p.id}>
+  <div key={productos.id}>
 
       <Center p='1rem'>
 
@@ -39,7 +39,7 @@ return (
 
               <CardBody>
 
-                  <Text>{productos.description}</Text>
+                  <Text>{producto.description}</Text>
 
                   <Text>{producto.category}</Text>
 
