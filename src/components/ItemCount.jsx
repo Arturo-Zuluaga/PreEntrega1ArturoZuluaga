@@ -10,7 +10,7 @@ const ItemCount = () => {
   const [contador, setContador] = useState(0)
 
   const confirmarCompra = () => {
-    alert("gracias por su compra" + contador + "productos")
+    alert("gracias por comprar" +  contador  +  "productos")
      setContador(0)
     }
 return(

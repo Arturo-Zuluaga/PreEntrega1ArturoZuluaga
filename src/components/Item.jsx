@@ -1,9 +1,9 @@
 
 import { Divider, Stack, Card, CardBody, Image, Heading, CardFooter, ButtonGroup, Button, Text,} from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
-import ItemCount from './ItemCount'
 
-  const Item = ({ productos } ) => {
+
+  const Item = ({ producto } ) => {
   
 
   return (
@@ -14,16 +14,16 @@ import ItemCount from './ItemCount'
       
        backgroundColor="" borderRadius="5px" >
         <Image
-          src={"image"}
+          src={producto.image}
           alt='imagen del producto'
           borderRadius='lg'
          
          
         />
         <Stack mt='6' spacing='3'>
-          <Heading size='md'>{"title"}</Heading>
+          <Heading size='md'>{producto.tittle}</Heading>
           <Text>
-            {"description"}
+            {producto.description}
           </Text>
          
         </Stack>
@@ -33,7 +33,7 @@ import ItemCount from './ItemCount'
         <ButtonGroup spacing='2'>
           
           <Button variant='solid' colorScheme='blue' >
-            <Link to={"/ItemCount/${p.id}"}>
+            <Link to={"/Item/${p.id}"}>
             Ir al detalles </Link>
           </Button>
           

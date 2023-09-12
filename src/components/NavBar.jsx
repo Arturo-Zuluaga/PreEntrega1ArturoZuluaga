@@ -23,16 +23,16 @@ const Navbar = () => {
                      Categories
                     </MenuButton>
                     <MenuList>
-                        <Link to={"/category/A"}>
-                        <MenuItem>Category A</MenuItem>
+                        <Link to={"/category/Anillos"}>
+                        <MenuItem>Anillos</MenuItem>
 
                         </Link>
-                        <Link to={"/category/B"}>
-                        <MenuItem>Category B</MenuItem>
+                        <Link to={"/category/Pulseras"}>
+                        <MenuItem>Pulseras</MenuItem>
 
                         </Link>
-                        <Link to={"/category/C"}>
-                        <MenuItem>Category C</MenuItem>
+                        <Link to={"/category/Zarcillos"}>
+                        <MenuItem>Zarcillos</MenuItem>
 
 
                         </Link>

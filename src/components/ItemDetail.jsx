@@ -4,11 +4,11 @@ import ItemCount from './ItemCount'
 import { useParams } from 'react-router-dom'
 
 
-const ItemDetail = ({ productos }) => {
-  console.log(productos)
+const ItemDetail = ({ producto }) => {
+  console.log(producto)
   const { id } = useParams()
 
-  const filteredProducts = p.filter((producto) => producto.id == id);
+  const filteredProducts = producto.filter((producto) => producto.id == id);
 
 
 
@@ -16,7 +16,7 @@ const ItemDetail = ({ productos }) => {
 
       <div>
 
-          {filteredProducts.map((p) => {
+          {filteredProducto.map((p) => {
 
 
 
@@ -33,15 +33,15 @@ return (
 
               <CardHeader>
 
-                  <Heading size='md'>{"p.nombre"}</Heading>
+                  <Heading size='md'>{producto.nombre}</Heading>
 
               </CardHeader>
 
               <CardBody>
 
-                  <Text>{"p.description"}</Text>
+                  <Text>{productos.description}</Text>
 
-                  <Text>{"p.category"}</Text>
+                  <Text>{producto.category}</Text>
 
               </CardBody>
 

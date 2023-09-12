@@ -13,7 +13,7 @@ const ItemList = ({productos =[]}) => {
 
             <Box key={String(p.id)}>
            
-            <Item producto = {p}/>
+            <Item producto = {productos}/>
             
              </Box>
               
