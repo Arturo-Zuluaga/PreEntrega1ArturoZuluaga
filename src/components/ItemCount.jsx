@@ -1,54 +1,53 @@
 
 import React from 'react'
-import {Box,Flex, Center, Button, Text, } from '@chakra-ui/react'
+import { Box, Flex, Center, Button, Text, Divider, VStack, } from '@chakra-ui/react'
 import { useState } from 'react'
 
 
 
-const ItemCount = () => {
+const ItemCount = ({precio=0}) => {
 
   const [contador, setContador] = useState(0)
 
   const confirmarCompra = () => {
-    alert("gracias por comprar" +  contador  +  "productos")
-     setContador(0)
-    }
-return(
-  
-  <>
-  <div className='center'>
-    <Center>
-      <Flex >
-        <Box px="2">
-        <Button variant='solid' colorScheme='blue'  onClick={()=> contador > 0? setContador(contador - 1): setContador(0)}>-</Button>
-         
+    alert("gracias por comprar" + contador + "productos")
+    setContador(0)
+  }
+  return (
 
+    <Flex>
+      <VStack>
+      <Center>
+        <Box px="2">
+          <Button variant='solid' colorScheme='blue' onClick={() => contador > 0 ? setContador(contador - 1) : setContador(0)}>-</Button>
         </Box>
         <Box px="2">
-        <Text fontSize={32} >
-          <p>{contador}</p>
-        </Text>
+          <Text fontSize={32} >
+            {contador}
+          </Text>
         </Box>
         <Box px="2">
-        <Button variant='solid' colorScheme='blue'  onClick={()=> contador < 10? setContador(contador + 1): setContador(10)} >+</Button>
+          <Button variant='solid' colorScheme='blue' onClick={() => contador < 10 ? setContador(contador + 1) : setContador(10)} >+</Button>
+        </Box>
+      </Center>
+      <Center>
          
-        </Box>
+      <Text fontSize={32} >
+          Subtotal:{contador * precio}
+        </Text>
         <Box px="2">
-        <Button onClick={(confirmarCompra)} variant='solid' colorScheme='blue' >
-          
+          <Button onClick={(confirmarCompra)} variant='solid' colorScheme='blue' >
             Comprar
           </Button>
-      </Box>
+          
+        </Box>
+      </Center>
+      </VStack>
+    </Flex>
 
-      </Flex>
+  )
 
-    </Center>
 
-  </div>
-  </>
-)
 
-  
-  
 }
 export default ItemCount

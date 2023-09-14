@@ -2,7 +2,7 @@
 import Item from './Item'
 import { Box, Flex,  } from '@chakra-ui/react'
 
-const ItemList = ({productos }) => {
+const ItemList = ({productos=[] }) => {
   
   return (
     <Flex  flexWrap="wrap" justifyContent="space-around" alignItems="center" gap={4}>
@@ -13,7 +13,7 @@ const ItemList = ({productos }) => {
 
             <Box key={String(p.id)}>
            
-            <Item producto = {productos}/>
+            <Item producto = {p}/>
             
              </Box>
               
