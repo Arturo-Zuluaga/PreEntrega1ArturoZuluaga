@@ -1,20 +1,41 @@
-import { Card, CardBody, Heading, CardFooter, Text, Stack, Divider, Image, } from '@chakra-ui/react'
+import { Card, CardBody, Heading, CardFooter, Text, Stack, Divider, Image, Box, } from '@chakra-ui/react'
 import ItemCount from './ItemCount'
+import { useContext, useState } from 'react'
+import { CartContext } from '../context/CartContext'
 
-const ItemDetail = ({ producto }) => {
+const ItemDetail = ({ producto, id,categoria, descripcion,precio }) => {
+
+    const [quatityAdded, setQuatityAdded] = useState(0)
+
+    const {addItem}= useContext(CartContext)
+
+    const handleOnAdd = (quatity) =>{
+        setQuatityAdded(quatity)
+
+        const item = {
+            precio,id,categoria,descripcion
+        }
+
+        addItem(item, quatity)
+    }
 
     console.log(producto)
     return (
-
-        <Card maxW='xs' margin="20px" height="50%" width="100%" backgroundColor='rgba(219, 252, 253, 0.946)'>
-            <CardBody
-                backgroundColor="" borderRadius="5px" >
-                <Image
-                    src={producto.imageUrl}
+      <Box marginTop="50px"
+      marginLeft="300px"
+      marginRight="300px">
+        <Card 
+        display="flex"
+        flexDirection="column"
+        alignItems="center"
+        justifyContent=" center">
+            <CardBody >
+                <Image  width="100%" height="300px"
+                    src={producto.imagen}
                     alt='imagen del producto'
                     borderRadius='lg'
                 />
-                <Stack mt='6' spacing='3'>
+                <Stack mt='10' spacing='5'>
                     <Heading size='md'>{producto.nombre}</Heading>
                     <Text>
                         {producto.descripcion}
@@ -23,12 +44,18 @@ const ItemDetail = ({ producto }) => {
                        Precio unidad {producto.precio}
                     </Text>
                 </Stack>
+                <Divider/>
             </CardBody>
-            <Divider />
-            <CardFooter>
-                <ItemCount precio={producto.precio}/>
+          
+            <CardFooter 
+        
+        
+        alignItems="center"
+        justifyContent=" center">
+                <ItemCount precio={producto.precio} />
             </CardFooter>
         </Card>
+        </Box>
     )
 }
 export default ItemDetail

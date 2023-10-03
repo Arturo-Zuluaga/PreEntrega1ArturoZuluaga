@@ -1,13 +1,18 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { BrowserRouter, Routes, Route, } from "react-router-dom"
 import ItemDetailContainer from "./components/ItemDetailContainer"
 import ItemListContainer from "./components/ItemListContainer"
 import Navbar from "./components/Navbar"
 import Cart from "./components/Cart"
+import Form from "./Form"
+import CartContextProvider, { CartContext } from "./context/CartContext"
+import ItemCart from "./context/ItemCart"
 
 
 const App = () => {
   return (
     <BrowserRouter>
+     <CartContextProvider>
+  
       <Navbar />
       <Routes>
         <Route exact path="/" element={<ItemListContainer />} />
@@ -15,6 +20,7 @@ const App = () => {
         <Route exact path="/item/:id" element={<ItemDetailContainer />} />
         <Route exact path="/cart" element={<Cart />} />
       </Routes>
+      </CartContextProvider>
     </BrowserRouter>
   )
 }

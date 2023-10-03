@@ -1,24 +1,26 @@
 
 import React from 'react'
-import { Box, Flex, Center, Button, Text, Divider, VStack, } from '@chakra-ui/react'
+import { Box, Flex, Center, Button, Text, VStack } from '@chakra-ui/react'
 import { useState } from 'react'
+import CartContextProvider from '../context/CartContext'
 
 
 
-const ItemCount = ({precio=0}) => {
+const ItemCount = ({precio=`${precio}`}) => {
 
   const [contador, setContador] = useState(0)
 
   const confirmarCompra = () => {
-    alert("gracias por comprar" + contador + "productos")
+    alert("gracias por comprar  " +  contador  + "  productos")
     setContador(0)
   }
   return (
-
-    <Flex>
-      <VStack>
-      <Center>
-        <Box px="2">
+  
+   
+     <Flex  >
+      <VStack >
+      <Center >
+        <Box px="2" >
           <Button variant='solid' colorScheme='blue' onClick={() => contador > 0 ? setContador(contador - 1) : setContador(0)}>-</Button>
         </Box>
         <Box px="2">
@@ -33,17 +35,19 @@ const ItemCount = ({precio=0}) => {
       <Center>
          
       <Text fontSize={32} >
-          Subtotal:{contador * precio}
+          Subtotal:{contador * `${precio}`}
         </Text>
         <Box px="2">
-          <Button onClick={(confirmarCompra)} variant='solid' colorScheme='blue' >
-            Comprar
+          <Button onClick={()=>
+            alert(`cantidad agregada al carrito ${contador}`)} variant='solid' colorScheme='blue' >
+            Agregar
           </Button>
           
         </Box>
       </Center>
       </VStack>
     </Flex>
+    
 
   )
 
@@ -51,3 +55,9 @@ const ItemCount = ({precio=0}) => {
 
 }
 export default ItemCount
+
+
+{/* <Alert status='success'>
+<AlertIcon />
+Data uploaded to the server. Fire on!
+</Alert> */}

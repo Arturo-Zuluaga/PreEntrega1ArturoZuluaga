@@ -1,8 +1,19 @@
 import React from 'react'
+import Form from '../Form'
+
+const cart =[2]
 
 const Cart = () => {
   return (
-    <div>Mi carrito</div>
+    <div>
+
+      {cart.length >0?
+      <Form/>
+      :
+      <button> Regresa a la pantalla principal </button>
+}
+    </div>
+      
   )
 }
 

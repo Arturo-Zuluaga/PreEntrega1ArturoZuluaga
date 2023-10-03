@@ -14,7 +14,7 @@ const CartWidget = () => {
                 </Box>
                 <Divider />
                 <Box>
-                    <p>1</p>
+                    <p>{}</p>
 
                 </Box>
 

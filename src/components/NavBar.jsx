@@ -8,8 +8,8 @@ import { Link } from 'react-router-dom'
 const Navbar = () => {
   return (
     <div>
-        <Flex backgroundColor='bisque'>
-            <Box p='4' backgroundColor='rgba(219, 252, 253, 0.946)'borderRadius="10px" >
+        <Flex backgroundColor="#cd9103b7" >
+            <Box p='4' borderRadius="10px" >
             <Link to={"/"}>
                 
              <h3> joyeria La perla del caribe</h3>
@@ -17,7 +17,7 @@ const Navbar = () => {
 
             </Box>
                 <Spacer />
-            <Box p='4'  backgroundColor='rgba(219, 252, 253, 0.946)'borderRadius="10px">
+            <Box p='4'  borderRadius="10px">
                 <Menu>
                     <MenuButton>
                      Categories
@@ -44,7 +44,7 @@ const Navbar = () => {
             </Box>
             <Spacer />
             
-            <Box p="4" backgroundColor='rgba(219, 252, 253, 0.946)' borderRadius="10px">
+            <Box p="4"   box-shadow= "#9da28a" borderRadius="10px">
                 <Link to={"/cart"}>
                 
                 <CartWidget/>
