@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 const Navbar = () => {
   return (
     <div>
-        <Flex backgroundColor="#cd9103b7" >
+        <Flex backgroundColor="beige" >
             <Box p='4' borderRadius="10px" >
             <Link to={"/"}>
                 

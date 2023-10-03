@@ -9,7 +9,7 @@ const Item = ({ producto }) => {
   return (
 
   
-    <Card  display="grid" flexDirection="column"
+    <Card  backgroundColor="beige" display="grid" flexDirection="column"
     margin="100px" width="500px" height="auto"  border="burlywood" 
      justify-content= "center"> 
       <CardBody borderRadius="5px" >

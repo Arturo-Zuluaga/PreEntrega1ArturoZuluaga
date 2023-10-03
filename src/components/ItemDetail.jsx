@@ -22,15 +22,16 @@ const ItemDetail = ({ producto, id,categoria, descripcion,precio }) => {
     console.log(producto)
     return (
       <Box marginTop="50px"
-      marginLeft="300px"
-      marginRight="300px">
-        <Card 
+      marginLeft="500px"
+      marginRight="500px"
+      >
+        <Card backgroundColor="beige"
         display="flex"
         flexDirection="column"
         alignItems="center"
         justifyContent=" center">
             <CardBody >
-                <Image  width="100%" height="300px"
+                <Image  width="500px" height="auto"
                     src={producto.imagen}
                     alt='imagen del producto'
                     borderRadius='lg'

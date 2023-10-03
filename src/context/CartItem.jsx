@@ -1,23 +1,29 @@
 import React from 'react'
-import { CartContext } from '../context/CartContext'
-import { Button } from '@chakra-ui/react'
+import { CartContext } from './CartContext'
+import { Box, Button } from '@chakra-ui/react'
 import { useContext } from 'react'
 
-const ItemCart = ({producto}) => {
+
+const CartItem = ({producto}) => {
     const {quitarDelCart, quitarUnidad} = useContext(CartContext)
   return (
-    <div className='itemCart'>
-        <img src={producto.imagen} alt={producto.nombre} className='imgCart'/>
-        <div>
+     <Box>
+             <img src={producto.imagen} alt={producto.nombre} />
+        
             <h3>{producto.nombre}</h3>
             <h4>Cantidad:{producto.quantity}</h4>
             <h4>${producto.precio} c/u</h4>
             <h4>Subtotal: ${producto.quantity * producto.precio}</h4>
             <Button onClick={() => quitarDelCart(producto.id)} className='eliminarBtn'>Eliminar</Button>
 
-        </div>
-    </div>
+            </Box>
+    
   )
 }
 
-export default ItemCart
+export default CartItem
+
+
+
+//className='itemCart'// 
+// className='imgCart'

@@ -5,13 +5,14 @@ import Navbar from "./components/Navbar"
 import Cart from "./components/Cart"
 import Form from "./Form"
 import CartContextProvider, { CartContext } from "./context/CartContext"
-import ItemCart from "./context/ItemCart"
+import CartItem from "./context/CartItem"
 
 
 const App = () => {
   return (
     <BrowserRouter>
      <CartContextProvider>
+      
   
       <Navbar />
       <Routes>
@@ -19,9 +20,13 @@ const App = () => {
         <Route exact path="/categoria/:categoria" element={<ItemListContainer />} />
         <Route exact path="/item/:id" element={<ItemDetailContainer />} />
         <Route exact path="/cart" element={<Cart />} />
+       
       </Routes>
+      {/* <Form/> */}
       </CartContextProvider>
     </BrowserRouter>
+    
+   
   )
 }
 
