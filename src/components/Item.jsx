@@ -9,15 +9,15 @@ const Item = ({ producto }) => {
   return (
 
   
-    <Card  backgroundColor="beige" display="grid" flexDirection="column"
-    margin="100px" width="500px" height="auto"  border="burlywood" 
-     justify-content= "center"> 
+    <Card  backgroundColor="beige" display="flex" flexDirection="column"
+    margin="20px" width="500px" height="600px"  
+     justify-content= "center" alignContent="center"> 
       <CardBody borderRadius="5px" >
         <Image 
           src={producto.imagen}
           alt='imagen del producto'
-          
-          width="100#"
+          borderRadius="10px"
+          width="100%"
           height="auto"/>
 
         <Stack mt='6' spacing='3'>

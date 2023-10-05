@@ -10,10 +10,14 @@ const CartItem = ({ producto }) => {
 
   const { quitarDelCart, quitarUnidad } = useContext(CartContext)
   return (
-    <HStack>
+    <Box  marginTop="20px" display="flex" flexDirection="column" alignItems="center" justifyContent=" center" fontSize="25px">
+    
+    <HStack >
       <Image
-        boxSize='100px'
+        boxSize='150px'
         objectFit='cover'
+        width="500px"
+        borderRadius="10px"
         src={imagen}
         alt={nombre} />
 
@@ -24,6 +28,7 @@ const CartItem = ({ producto }) => {
       <Button onClick={() => quitarDelCart(id)}>Eliminar</Button>
 
     </HStack>
+    </Box>
 
   )
 }

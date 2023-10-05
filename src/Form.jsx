@@ -1,21 +1,34 @@
 import { Spacer, Box, Button, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, StackDivider, Text, VStack, useDisclosure } from '@chakra-ui/react'
 import { useState } from 'react'
 import { collection, addDoc, getFirestore } from 'firebase/firestore'
-import { CartContext } from './context/CartContext'
+import CartContextProvider, { CartContext } from './context/CartContext'
 
 const Form = ({ getbuyer }) => {
 
     const [nombre, setNombre] = useState("")
     const [email, setEmail] = useState("")
     const [telefono, setTelefono] = useState("")
-
+   
 
     const handleSubmit = (e) => {
 
         e.preventDefault()
-        // nombre === "" ? alert("campo nombre vacío") : alert(`Bienvenido, ${nombre}`)
-        // telefono === "" ? alert("campo email vacío") : alert(`Registrado con el telefono, ${telefono}`)
-        // email === "" ? alert("campo telefono vacío") : alert(`Registrado con el email, ${email}`)
+        if(nombre === ""){
+            return  alert("campo nombre vacío")
+        }
+
+        if(email === ""){
+            return  alert("campo email vacío")
+
+        }
+
+        if(telefono === ""){
+            return  alert("campo telefono vacío")
+
+        }
+
+        alert(`Bienvenido, ${nombre}`)
+        
 
         const buyer = {
             nombre, email, telefono
@@ -31,32 +44,36 @@ const Form = ({ getbuyer }) => {
 
     return (
         <>
-            <Button onClick={onOpen}>finalizar compra</Button>
+            <Box>
+                <Button marginLeft="800px" marginTop="20px" display="flex"
+                    flexDirection="column" alignItems="center"
+                    justifyContent="left" fontSize="25px"
+                    onClick={onOpen}>finalizar compra</Button>
+            </Box>
 
             <Modal isOpen={isOpen} onClose={onClose}>
                 <ModalOverlay />
                 <ModalContent>
-                    <ModalHeader>Modal Title</ModalHeader>
+                    <ModalHeader display="flex" flexDirection="column" alignItems="center" justifyContent=" center" fontSize="25px">Formulario para nuestros clientes </ModalHeader>
                     <ModalCloseButton />
                     <ModalBody>
                         <Box
                             display="flex" flexDirection="column" alignItems="center" justifyContent=" center" fontSize="25px">
 
-                            <Text fontSize={32}>Formulario para nuestros clientes </Text>
+
                             <form onSubmit={handleSubmit} >
                                 <Spacer />
                                 <label htmlFor="nombre">Nombre:</label>
-                                <input type="nombre" placeholder='agruegue su nombre' onChange={(e) => setNombre(e.target.value)} />
+                                <input type="nombre" placeholder=' Agruegue su nombre' onChange={(e) => setNombre(e.target.value)} />
                                 <Spacer />
                                 <label htmlFor="Telefono">Telefono:</label>
-                                <input type="number" placeholder='agruegue su Telefono' onChange={(e) => setTelefono(e.target.value)} />
+                                <input type="number" placeholder=' Agruegue su Telefono' onChange={(e) => setTelefono(e.target.value)} />
                                 <Spacer />
                                 <label htmlFor="email">Email:</label>
-                                <input type="email" placeholder='agruegue su email' onChange={(e) => setEmail(e.target.value)} />
+                                <input type="email" placeholder=' Agruegue su email' onChange={(e) => setEmail(e.target.value)} />
                                 <Spacer />
 
                                 <Spacer />
-                               
 
                             </form>
                         </Box>
@@ -67,13 +84,20 @@ const Form = ({ getbuyer }) => {
                         <Button colorScheme='blue' mr={3} onClick={handleSubmit} >
                             Confirmar orden
                         </Button>
+
+
                     </ModalFooter>
                 </ModalContent>
             </Modal>
-        </>
-    )
+            </>
+            )
+    
+        }
 
-}
 
-export default Form
+
+
+
+
+            export default Form
 

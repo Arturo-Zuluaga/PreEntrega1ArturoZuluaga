@@ -4,6 +4,7 @@ import { Box, Button, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFoo
 import CartItem from '../context/CartItem'
 import Form from '../Form'
 import { addDoc, collection, getFirestore } from 'firebase/firestore'
+import { Link } from 'react-router-dom'
 
 
 
@@ -23,27 +24,50 @@ const CartContainer = () => {
     console.log(order)
     addDoc(ordersCollection, order).then(({ id }) => setOrderId(id))
   }
+  if(orderId){
+    return(     <Box>
+      <Text marginTop="100px" display="flex" flexDirection="column" alignItems="center" justifyContent=" center" fontSize="25px">
+      Su compra se realizo de manera exitosa, su orden de compra es la siguiente:
+
+      </Text>
+      <Text marginTop="100px" display="flex" flexDirection="column" alignItems="center" justifyContent=" center" fontSize="25px">
+      {orderId}
+      </Text>
+      <Box marginTop="100px" display="flex" flexDirection="column" alignItems="center" justifyContent=" center" fontSize="25px" >
+      <Button colorScheme='blue' >
+      <Link to={"/"} >  volver al inicio
+      </Link>
+      </Button>
+      </Box>
+    </Box>
+
+
+    )
+  }
 
   if (cart.length === 0) {
     return (
 
       <Box>
-        <Text>
+        <Text marginTop="100px" display="flex" flexDirection="column" alignItems="center" justifyContent=" center" fontSize="25px">
+
           no ha agregado ningun producto al carrito
         </Text>
+
+        
       </Box>)
   }
   return (
     <Box>
-      <VStack
+      <VStack marginLeft="200px" marginRight="200px"
         divider={
           <StackDivider borderColor='gray.200' />}
-        spacing={4}
-        align='stretch'
+          spacing={4}
+          align='stretch'
       >
         {cart.map((p, index) => {
           return (
-            <Box key={index} h='100px'>
+            <Box backgroundColor="beige"   borderRadius="10px" key={index} h='200px' marginLeft="100px" marginRight="100px" margin="20px" border="solid">
               <CartItem producto={p} />
             </Box>
           )
