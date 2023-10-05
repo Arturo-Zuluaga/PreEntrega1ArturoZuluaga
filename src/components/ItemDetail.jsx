@@ -3,20 +3,20 @@ import ItemCount from './ItemCount'
 import { useContext, useState } from 'react'
 import { CartContext } from '../context/CartContext'
 
-const ItemDetail = ({ producto, id,categoria, descripcion,precio }) => {
+const ItemDetail = ({ producto }) => {
+    const { id,categoria,nombre,imagen, descripcion,precio } =producto
 
-    const [quatityAdded, setQuatityAdded] = useState(0)
 
     const {addItem}= useContext(CartContext)
 
-    const handleOnAdd = (quatity) =>{
-        setQuatityAdded(quatity)
+    const getQuantity = (quantity) =>{
+        
 
         const item = {
-            precio,id,categoria,descripcion
+            precio,id,categoria,descripcion,imagen
         }
 
-        addItem(item, quatity)
+        addItem(item, quantity)
     }
 
     console.log(producto)
@@ -25,42 +25,30 @@ const ItemDetail = ({ producto, id,categoria, descripcion,precio }) => {
       marginLeft="500px"
       marginRight="500px"
       >
-        <Card backgroundColor="beige"
-        display="flex"
-        flexDirection="column"
-        alignItems="center"
-        justifyContent=" center">
+        <Card backgroundColor="beige" display="flex" flexDirection="column" alignItems="center" justifyContent=" center">
             <CardBody >
                 <Image  width="500px" height="auto"
-                    src={producto.imagen}
+                    src={imagen}
                     alt='imagen del producto'
                     borderRadius='lg'
                 />
                 <Stack mt='10' spacing='5'>
-                    <Heading size='md'>{producto.nombre}</Heading>
+                    <Heading size='md'>{nombre}</Heading>
                     <Text>
-                        {producto.descripcion}
+                        {descripcion}
                     </Text>
                     <Text>
-                       Precio unidad {producto.precio}
+                       Precio unidad {precio}
                     </Text>
                 </Stack>
                 <Divider/>
             </CardBody>
           
-            <CardFooter 
-        
-        
-        alignItems="center"
-        justifyContent=" center">
-                <ItemCount precio={producto.precio} />
+            <CardFooter  alignItems="center" justifyContent=" center">
+                <ItemCount handleOnAdd={getQuantity} precio={producto.precio} />
             </CardFooter>
         </Card>
         </Box>
     )
 }
 export default ItemDetail
-
-
-
-
