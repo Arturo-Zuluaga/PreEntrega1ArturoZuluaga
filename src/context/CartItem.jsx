@@ -10,9 +10,9 @@ const CartItem = ({ producto }) => {
 
   const { quitarDelCart, quitarUnidad } = useContext(CartContext)
   return (
-    <Box  marginTop="20px" display="flex" flexDirection="column" alignItems="center" justifyContent=" center" fontSize="25px">
+    <Box  marginTop="20px"  display="flex" flexDirection="column" alignItems="center" justifyContent=" center" fontSize="25px">
     
-    <HStack >
+    <HStack  >
       <Image
         boxSize='150px'
         objectFit='cover'

@@ -6,6 +6,7 @@ import Form from "./Form"
 import CartContextProvider, { CartContext } from "./context/CartContext"
 import CartItem from "./context/CartItem"
 import CartContainer from "./components/CartContainer"
+import Footer from "./components/Footer"
 
 
 const App = () => {
@@ -22,7 +23,7 @@ const App = () => {
           <Route exact path="/cart" element={<CartContainer />} />
 
         </Routes>
-       
+       <Footer/>
       </CartContextProvider>
     </BrowserRouter>
 

@@ -2,6 +2,7 @@ import { Spacer, Box, Button, Modal, ModalBody, ModalCloseButton, ModalContent, 
 import { useState } from 'react'
 import { collection, addDoc, getFirestore } from 'firebase/firestore'
 import CartContextProvider, { CartContext } from './context/CartContext'
+import Swal from 'sweetalert2'
 
 const Form = ({ getbuyer }) => {
 
@@ -27,7 +28,8 @@ const Form = ({ getbuyer }) => {
 
         }
 
-        alert(`Bienvenido, ${nombre}`)
+       
+        Swal.fire(`Bienvenido, ${nombre}`)
         
 
         const buyer = {

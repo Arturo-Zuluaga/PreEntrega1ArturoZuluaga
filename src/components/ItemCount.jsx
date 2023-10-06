@@ -2,7 +2,7 @@
 import React from 'react'
 import { Box, Flex, Center, Button, Text, VStack } from '@chakra-ui/react'
 import { useState } from 'react'
-// import CartContextProvider from '../context/CartContext'
+
 
 
 const ItemCount = ({ handleOnAdd, precio = 0 }) => {
@@ -59,8 +59,3 @@ const ItemCount = ({ handleOnAdd, precio = 0 }) => {
 }
 export default ItemCount
 
-
-{/* <Alert status='success'>
-<AlertIcon />
-Data uploaded to the server. Fire on!
-</Alert> */}
