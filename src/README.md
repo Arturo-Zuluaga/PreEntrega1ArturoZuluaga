@@ -13,7 +13,7 @@ joyeria la realeza es un ecommerce dedicado a la venta al detal de productos de 
 
 ## Video
 
-<img alt="La realeza joyeria" src="./src/img/video.gif.mp4"/>
+<img alt="La realeza joyeria" src="./img/video.gif.mp4"/>
 
 
 ## Main libraries
