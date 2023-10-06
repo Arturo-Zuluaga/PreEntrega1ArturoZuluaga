@@ -9,7 +9,12 @@ Contact:mallecum@gmail.com >[linkedIn](https://www.linkedin.com/in/arturo-zuluag
 
 ## Description
 
-Bendita is an ecommerce platform of aesthetic treatments based on React made for the React Js course at CoderHouse. It will later become an ecommerce platform for cosmetics.
+joyeria la realeza es un ecommerce dedicado a la venta al detal de productos de joyeria fina, trabajamos con los mejores productos del mercado y contamos con los mejores precios en dolares.
+
+## Video
+
+<img alt="La realeza joyeria" src="./src/img/video.gif.avi"/>
+
 
 ## Main libraries
 | Library                                                          | Used
